@@ -13,12 +13,13 @@
                     <&gpio0 10 GPIO_ACTIVE_LOW>,   // COL5
                     <&gpio0 9  GPIO_ACTIVE_LOW>;   // COL6
 
-        demux-gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>,    // S0
-                      <&gpio1 0  GPIO_ACTIVE_HIGH>,    // S1
-                      <&gpio0 24 GPIO_ACTIVE_HIGH>,    // S2
-                      <&gpio0 22 GPIO_ACTIVE_HIGH>;    // S3 (if needed)
+        output-gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>,    // S0 - DEMUX SELECT 0
+                       <&gpio1 0  GPIO_ACTIVE_HIGH>,    // S1 - DEMUX SELECT 1
+                       <&gpio0 24 GPIO_ACTIVE_HIGH>,    // S2 - DEMUX SELECT 2
+                       <&gpio0 22 GPIO_ACTIVE_HIGH>;    // S3 - DEMUX SELECT 3 (if using 16 rows)
 
-        demux-signal-gpio = <&gpio0 20 GPIO_ACTIVE_HIGH>; // SIG
+        input-gpios = <&gpio0 20 GPIO_ACTIVE_HIGH>;     // SIG - DEMUX DATA LINE
+
         debounce-period-ms = <5>;
         size = <7 15>; // columns, rows
         // Optionally: row-pins = <...>; if your mux lines are not in order
