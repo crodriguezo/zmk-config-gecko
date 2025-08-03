@@ -11,7 +11,6 @@
                        <&gpio0 22 GPIO_ACTIVE_HIGH>;    // S3 - DEMUX SELECT 3 (if using 16 rows)
 
         input-gpios = <&gpio0 20 GPIO_ACTIVE_HIGH>;     // SIG - DEMUX DATA LINE
-        output-count = <16>;
     };
 
     kscan_direct: kscan_direct {
