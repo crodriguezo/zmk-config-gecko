@@ -26,7 +26,7 @@
     };
 
     kscan_composite: kscan_composite {
-        compatible = "zmk,kscan-composite"
+        compatible = "zmk,kscan-composite";
         rows=<15>;
         cols=<7>;
         // Include the direct GPIO driver...
