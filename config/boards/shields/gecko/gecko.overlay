@@ -1,30 +1,32 @@
 / {
     chosen {
-        zmk,kscan = &kscan_demux;
+        zmk,kscan = &kscan_composite;
     };
 
     kscan_demux: kscan_demux {
         compatible = "zmk,kscan-gpio-demux";
-        col-gpios = <&gpio0 29 GPIO_ACTIVE_LOW>,   // COL0
-                    <&gpio0 2  GPIO_ACTIVE_LOW>,   // COL1
-                    <&gpio1 15 GPIO_ACTIVE_LOW>,   // COL2
-                    <&gpio1 13 GPIO_ACTIVE_LOW>,   // COL3
-                    <&gpio1 11 GPIO_ACTIVE_LOW>,   // COL4
-                    <&gpio0 10 GPIO_ACTIVE_LOW>,   // COL5
-                    <&gpio0 9  GPIO_ACTIVE_LOW>;   // COL6
-
         output-gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>,    // S0 - DEMUX SELECT 0
                        <&gpio1 0  GPIO_ACTIVE_HIGH>,    // S1 - DEMUX SELECT 1
                        <&gpio0 24 GPIO_ACTIVE_HIGH>,    // S2 - DEMUX SELECT 2
                        <&gpio0 22 GPIO_ACTIVE_HIGH>;    // S3 - DEMUX SELECT 3 (if using 16 rows)
 
         input-gpios = <&gpio0 20 GPIO_ACTIVE_HIGH>;     // SIG - DEMUX DATA LINE
+        output-count = <16>;
+    };
 
-        debounce-period-ms = <5>;
-        size = <7 15>; // columns, rows
-        // Optionally: row-pins = <...>; if your mux lines are not in order
-        // If your logical matrix row order is not C0, C1, C2, ..., C14, add row-pins as below:
-        row-pins = <0 1 15 3 4 5 6 7 8 9 10 11 12 13 14>; 
-        // (This line is only needed if your physical row order ≠ C0–C14. Adjust as needed.)
+    kscan_direct: kscan_direct {
+        compatible = "zmk,kscan-direct";        
+        input-gpios = <&gpio0 29 GPIO_ACTIVE_HIGH>,   // COL0
+                      <&gpio0 2  GPIO_ACTIVE_HIGH>,   // COL1
+                      <&gpio1 15 GPIO_ACTIVE_HIGH>,   // COL2
+                      <&gpio1 13 GPIO_ACTIVE_HIGH>,   // COL3
+                      <&gpio1 11 GPIO_ACTIVE_HIGH>,   // COL4
+                      <&gpio0 10 GPIO_ACTIVE_HIGH>,   // COL5
+                      <&gpio0 9  GPIO_ACTIVE_HIGH>;   // COL6
+    };
+
+    kscan_composite: kscan_composite {
+        compatible = "zmk,kscan-composite";
+        components = <&kscan_demux &kscan_direct>;
     };
 };
