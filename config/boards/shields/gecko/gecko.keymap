@@ -18,8 +18,8 @@
                 &kp N9         &kp O          &kp RGUI      &kp M          &kp RET
                 &kp N0         &kp P          &kp H         &kp COMMA      &kp SPACE
                 &kp MINUS      &kp BSLASH     &kp J         &kp DOT        &kp UP
-                &kp ESC          &none          &kp K         &kp SLASH      &kp DOWN
-                &kp F1          &none          &kp L         &kp RSHFT      &kp LBKT
+                &kp ESC        &none          &kp K         &kp SLASH      &kp DOWN
+                &kp F1         &none          &kp L         &kp RSHFT      &kp LBKT
                 &kp F2         &none          &kp SEMI      &none          &kp RBKT
                 &kp F3         &none          &kp QUOT      &none          &none
             >;
