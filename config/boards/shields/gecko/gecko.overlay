@@ -35,6 +35,6 @@
         };
         mux {
             kscan = <&kscan_demux>;
-        }
+        };
     };
 };
