@@ -1,6 +1,28 @@
 / {
     chosen {
-        zmk,kscan = &kscan_demux;
+        zmk,kscan = &kscan_matrix;
+    };
+
+    kscan_matrix: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        row-gpios = <&gpio0 17 (GPIO_PULL_DOWN)>,   // row0
+                    <&gpio0 20 (GPIO_PULL_DOWN)>,   // row1
+                    <&gpio0 22 (GPIO_PULL_DOWN)>,   // row2 (C15)
+                    <&gpio0 24 (GPIO_PULL_DOWN)>,   // row3 (C3)
+                    <&gpio1  0 (GPIO_PULL_DOWN)>,   // row4 (C4)
+                    <&gpio0 11 (GPIO_PULL_DOWN)>,   // row5 (C5)
+                    <&gpio1  4 (GPIO_PULL_DOWN)>,   // row6 (C6)
+                    <&gpio1  6 (GPIO_PULL_DOWN)>,   // row7 (C7)
+                    <&gpio0  8 (GPIO_PULL_DOWN)>;   // row8 (C8)
+        col-gpios = <&gpio0 29 (GPIO_PULL_UP)>,     // col0
+                    <&gpio0  2 (GPIO_PULL_UP)>,     // col1
+                    <&gpio1 15 (GPIO_PULL_UP)>,     // col2
+                    <&gpio1 13 (GPIO_PULL_UP)>,     // col3
+                    <&gpio1 11 (GPIO_PULL_UP)>,     // col4
+                    <&gpio0 10 (GPIO_PULL_UP)>,     // col5
+                    <&gpio0  9 (GPIO_PULL_UP)>;     // col6
+
+        debounce-period-ms = <5>;
     };
 
     kscan_demux: kscan_demux {
