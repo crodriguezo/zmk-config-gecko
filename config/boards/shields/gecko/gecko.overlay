@@ -21,8 +21,6 @@
                     <&gpio1 11 (GPIO_PULL_UP)>,     // col4
                     <&gpio0 10 (GPIO_PULL_UP)>,     // col5
                     <&gpio0  9 (GPIO_PULL_UP)>;     // col6
-
-        debounce-period-ms = <5>;
     };
 
     kscan_demux: kscan_demux {
