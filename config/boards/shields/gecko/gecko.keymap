@@ -6,18 +6,18 @@
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-                &kp RBRC &kp QMARK &kp COLON &kp P &kp N0 &none &none  // row 0
-                &kp N5 &kp T &kp G &kp B &kp RIGHT &kp N0 &kp N1   // row 1
-                &kp N4 &kp R &kp F &kp V &kp RIGHT &none &kp END   // row 2
+                &kp RBKT &kp QMARK &kp SEMICOLON &kp P &kp N0 &none &none  // row 0
+                &kp N5 &kp T &kp G &kp B &kp RIGHT &none &none   // row 1
+                &kp N4 &kp R &kp F &kp V &none &none &kp END   // row 2
                 &kp N3 &kp E &kp D &kp C &kp LEFT &kp BSPC &kp HOME // row 3
                 &kp N2 &kp W &kp S &kp X &kp BSLH &kp DEL &none   // row 4
                 &kp N1 &kp Q &kp A &kp Z &kp GRAVE &kp LCTRL &kp LALT   // row 5
                 &kp EQUAL &kp TAB &kp CAPS &kp LSHFT &none &none &none   // row 6
                 &kp UP &kp N &kp H &kp Y &kp N6 &kp SPACE &kp PG_DN // row 7
                 &none &kp M &kp J &kp U &kp N7 &kp ENTER &none // row 8
-                &kp DOWN &kp LT &kp K &kp I &kp N8 &kp RCTRL &kp PG_UP  // row 9
-                &kp LBRC &kp GT &kp L &kp O &kp N9 &kp N7 &kp RCMD // row 10
-                &none &kp RSHFT &kp COMMA &kp BSLH &kp MINUS &none // row 11
+                &kp DOWN &kp COMMA &kp K &kp I &kp N8 &kp RCTRL &kp PG_UP  // row 9
+                &kp LBKT &kp DOT &kp L &kp O &kp N9 &kp N7 &kp RCMD // row 10
+                &none &kp RSHFT &kp APOS &kp BSLH &kp MINUS &none // row 11
             >;
         };
     };
