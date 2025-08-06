@@ -6,18 +6,18 @@
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-                &none &none &none &none &kp N0 &none &none  // row 0
+                &kp RBRC &kp QMARK &kp COLON &kp P &kp N0 &none &none  // row 0
                 &kp N5 &kp T &kp G &kp B &none &none &none   // row 1
-                &kp N4 &kp R &kp F &kp V &kp RIGHT &none &none   // row 2
-                &kp N3 &kp E &kp D &kp C &kp LEFT &kp L &kp P   // row 3
+                &kp N4 &kp R &kp F &kp V &kp RIGHT &kp 0 &kp 1   // row 2
+                &kp N3 &kp E &kp D &kp C &kp LEFT &kp BSPC &kp HOME // row 3
                 &kp N2 &kp W &kp S &kp X &kp BSLH &kp DEL &kp O   // row 4
                 &kp N1 &kp Q &kp A &kp Z &kp GRAVE &none &none   // row 5
                 &kp EQUAL &kp TAB &kp CAPS &kp LSHFT &none &none &none   // row 6
-                &kp N6 &none &none &kp Y &kp N6 &none &none // row 7
-                &kp N7 &none &none &none &kp N7 &none &none // row 8
-                &kp N8 &none &none &none &kp N8 &none &none // row 9
-                &kp N9 &none &none &none &kp N9 &none &none // row 10
-                &kp MINUS &none &none &kp MINUS &none &none // row 11
+                &kp 6 &kp N &kp H &kp Y &kp N6 &none &none // row 7
+                &kp UP &kp M &kp J &kp U &kp N7 &none &none // row 8
+                &kp DOWN &kp LT &kp K &kp I &kp N8 &none &none // row 9
+                &kp LBRC &kp GT &kp L &kp O &kp N9 &none &none // row 10
+                &kp RSHFT &kp COMMA &kp BSLH &kp MINUS &none &none // row 11
             >;
         };
     };
