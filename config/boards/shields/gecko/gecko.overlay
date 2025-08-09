@@ -1,6 +1,7 @@
 / {
     chosen {
         zmk,kscan = &kscan0;
+        zephyr,display = &oled;
     };
 
     kscan0: kscan_0 {
@@ -36,22 +37,23 @@
 };
 
 
-&pro_micro_i2c {
+&i2c0 {
     status = "okay";
+    sda-pin = <&gpio1 07>;   /* matches your purple wire pin */
+    scl-pin = <&gpio1 02>;   /* matches your blue wire pin */
+    clock-frequency = <I2C_BITRATE_STANDARD>;
 
-    oled: ssd1306@3c {
+    ssd1306@3c {
         compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
+        reg = <0x3C>;
+        label = "SSD1306";
         width = <128>;
-        height = <32>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <31>;
+        height = <64>;
         segment-remap;
         com-invdir;
-        com-sequential;
-        inversion-on;
-        prechargep = <0x22>;
+        multiplex-ratio = <63>;
+        page-offset = <0>;
+        display-offset = <0>;
+        status = "okay";
     };
 };
