@@ -37,23 +37,22 @@
 };
 
 
-&i2c0 {
+&pro_micro_i2c {
     status = "okay";
-    sda-pin = <&gpio1 07>;   /* matches your purple wire pin */
-    scl-pin = <&gpio1 02>;   /* matches your blue wire pin */
-    clock-frequency = <I2C_BITRATE_STANDARD>;
 
-    ssd1306@3c {
+    oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
-        reg = <0x3C>;
-        label = "SSD1306";
+        reg = <0x3c>;
         width = <128>;
-        height = <64>;
-        segment-remap;
-        com-invdir;
-        multiplex-ratio = <63>;
+        height = <32>;
+        segment-offset = <0>;
         page-offset = <0>;
         display-offset = <0>;
-        status = "okay";
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        inversion-on;
+        prechargep = <0x22>;
     };
 };
