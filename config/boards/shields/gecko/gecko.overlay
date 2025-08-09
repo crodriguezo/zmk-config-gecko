@@ -35,11 +35,18 @@
             ;
     };
 };
-
+&pinctrl {
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 7)>,   /* SDA = P1.07 */
+                    <NRF_PSEL(TWIM_SCL, 1, 2)>;   /* SCL = P1.02 */
+        };
+    };
+};
 &i2c0 {
     status = "okay";
-    sda-pin = <39>;      /* P1.07 */
-    scl-pin = <34>;      /* P1.02 */
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-names = "default";
     clock-frequency = <I2C_BITRATE_STANDARD>;
 
     oled: ssd1306@3c {
